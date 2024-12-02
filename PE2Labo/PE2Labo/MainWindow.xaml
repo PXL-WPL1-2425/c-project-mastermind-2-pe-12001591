@@ -52,9 +52,9 @@
         <Label x:Name="scoreLabel" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="362,26,0,0" FontSize="16" />
         <Menu x:Name="Hoofdmenu" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <MenuItem Header="Bestand" >
-                <MenuItem x:Name= "MnuNewGame" Header="Nieuw Spel"/>
+                <MenuItem x:Name= "MnuNewGame" Header="Nieuw Spel" Click="PlayAgain_click"/>
                 <MenuItem x:Name= "MnuHighscore" Header="Highscores"/>
-                <MenuItem x:Name="MnuAfsluiten" Header="Afsluiten" />
+                <MenuItem x:Name="MnuAfsluiten" Header="Afsluiten" Click="closeMenu_Click" />
             </MenuItem>
             
             <MenuItem x:Name="MnuInstellingen" Header="Instellingen" >

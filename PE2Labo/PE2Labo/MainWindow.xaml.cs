@@ -344,31 +344,16 @@ namespace c_project_mastermind_1_12001591
                 MessageBox.Show("Congratulations! You guessed the code correctly!");
                 gameEnded = true;
                 timer.Stop();
-                AskToPlayAgain();
+               
             }
             else if (attempts >= 10)
             {
                 MessageBox.Show("Game over! You've reached the maximum number of attempts.");
                 gameEnded = true;
                 timer.Stop();
-                AskToPlayAgain();
+               
             }
         }
-
-        private void AskToPlayAgain()
-        {
-            MessageBoxResult result = MessageBox.Show("Do you want to play again?", "Game Over", MessageBoxButton.YesNo);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                ResetGame();
-            }
-            else
-            {
-                this.Close();
-            }
-        }
-
         private void ResetGame()
         {
             attempts = 0;
@@ -435,6 +420,26 @@ namespace c_project_mastermind_1_12001591
                 default: return new SolidColorBrush(Colors.Gray);
             }
         }
+        private void closeMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Bent u zeker dat u wilt afsluiten", "afsluiten", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+        }
 
+        private void PlayAgain_click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Do you want to play again?", "Game Over", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                ResetGame();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
     }
 }
