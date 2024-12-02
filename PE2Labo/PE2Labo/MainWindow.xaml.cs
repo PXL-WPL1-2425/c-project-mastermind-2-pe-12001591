@@ -32,6 +32,8 @@ namespace c_project_mastermind_1_12001591
         public MainWindow()
         {
             InitializeComponent();
+
+            
             attempts = 0;
             Title = $"Poging {attempts + 1}/10";
 
@@ -344,14 +346,14 @@ namespace c_project_mastermind_1_12001591
                 MessageBox.Show("Congratulations! You guessed the code correctly!");
                 gameEnded = true;
                 timer.Stop();
-               
+
             }
             else if (attempts >= 10)
             {
                 MessageBox.Show("Game over! You've reached the maximum number of attempts.");
                 gameEnded = true;
                 timer.Stop();
-               
+
             }
         }
         private void ResetGame()
@@ -407,6 +409,7 @@ namespace c_project_mastermind_1_12001591
                 debugCodeTextBox.Visibility = Visibility.Collapsed;
             }
         }
+
         private Brush GetBrushFromString(string color)
         {
             switch (color)
@@ -440,6 +443,11 @@ namespace c_project_mastermind_1_12001591
             {
                 this.Close();
             }
+        }
+        private int InputTotalAttempts(int totalAttempts)
+        {
+            totalAttempts = int.Parse(Console.ReadLine());
+            return totalAttempts;
         }
     }
 }
